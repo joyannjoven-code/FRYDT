@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme colors as RGB triplets so Tailwind opacity utilities keep working. */
+:root {
+  --page: 242 246 248;
+  --surface: 255 255 255;
+  --line: 220 229 234;
+  --soft: 86 103 121;
+  --main: 15 42 67;
+  --link: 27 111 130;
+  --tealpale: 225 242 246;
+  --field: 159 177 190;
+  --seg: 227 235 240;
+  --herofrom: 228 239 244;
+  color-scheme: light;
+}
+
+:root.dark {
+  --page: 11 20 29;
+  --surface: 20 33 46;
+  --line: 40 60 79;
+  --soft: 160 180 196;
+  --main: 232 240 245;
+  --link: 92 195 214;
+  --tealpale: 18 52 60;
+  --field: 76 98 117;
+  --seg: 11 20 29;
+  --herofrom: 15 32 47;
+  color-scheme: dark;
+}
+
+body {
+  background-color: rgb(var(--page));
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px; /* keeps anchored sections clear of the sticky header */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
